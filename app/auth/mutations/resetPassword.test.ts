@@ -3,7 +3,9 @@ import db from "db"
 import { SecurePassword, hash256 } from "@blitzjs/auth"
 
 beforeEach(async () => {
-  await db.$reset()
+  await db.$reset().catch((r) => {
+    console.log(r)
+  })
 })
 
 const mockCtx: any = {
@@ -31,13 +33,13 @@ describe("resetPassword mutation", () => {
           // Create old token to ensure it's deleted
           create: [
             {
-              type: "RESET_PASSWORD",
+              type: "reset_password",
               hashedToken: hash256(expiredToken),
               expiresAt: past,
               sentTo: "user@example.com",
             },
             {
-              type: "RESET_PASSWORD",
+              type: "reset_password",
               hashedToken: hash256(goodToken),
               expiresAt: future,
               sentTo: "user@example.com",
