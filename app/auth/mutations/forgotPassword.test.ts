@@ -28,7 +28,7 @@ describe("forgotPassword mutation", () => {
         tokens: {
           // Create old token to ensure it's deleted
           create: {
-            type: "RESET_PASSWORD",
+            type: "reset_password",
             hashedToken: "token",
             expiresAt: new Date(),
             sentTo: "user@example.com",

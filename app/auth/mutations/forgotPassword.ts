@@ -19,12 +19,12 @@ export default resolver.pipe(resolver.zod(ForgotPassword), async ({ email }) => 
   // 3. If user with this email was found
   if (user) {
     // 4. Delete any existing password reset tokens
-    await db.token.deleteMany({ where: { type: "RESET_PASSWORD", userId: user.id } })
+    await db.token.deleteMany({ where: { type: "reset_password", userId: user.id } })
     // 5. Save this new token in the database.
     await db.token.create({
       data: {
         user: { connect: { id: user.id } },
-        type: "RESET_PASSWORD",
+        type: "reset_password",
         expiresAt,
         hashedToken,
         sentTo: user.email,

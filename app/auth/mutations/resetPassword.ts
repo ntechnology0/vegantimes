@@ -13,7 +13,7 @@ export default resolver.pipe(resolver.zod(ResetPassword), async ({ password, tok
   // 1. Try to find this token in the database
   const hashedToken = hash256(token)
   const possibleToken = await db.token.findFirst({
-    where: { hashedToken, type: "RESET_PASSWORD" },
+    where: { hashedToken, type: "reset_password" },
     include: { user: true },
   })
 
