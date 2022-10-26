@@ -3,6 +3,7 @@ import { AuthenticationError, AuthorizationError } from "blitz"
 import { withBlitz } from "app/blitz-client"
 import React from "react"
 import "@styles/index.scss"
+import PlausibleProvider from "next-plausible"
 
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   if (error instanceof AuthenticationError) {
@@ -27,9 +28,11 @@ function RootErrorFallback({ error }: ErrorFallbackProps) {
 function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   return (
-    <ErrorBoundary FallbackComponent={RootErrorFallback}>
-      {getLayout(<Component {...pageProps} />)}
-    </ErrorBoundary>
+    <PlausibleProvider domain="parawell.ma">
+      <ErrorBoundary FallbackComponent={RootErrorFallback}>
+        {getLayout(<Component {...pageProps} />)}
+      </ErrorBoundary>
+    </PlausibleProvider>
   )
 }
 
