@@ -5,7 +5,7 @@ const AnimationStyled = styled.canvas`
   --gradient-color-1: #379237;
   --gradient-color-2: #54b435;
   --gradient-color-3: #82cd47;
-  --gradient-color-4: #82cd47;
+  --gradient-color-4: #f3ff65;
 `
 
 const GradientAnimation: React.FC = () => {

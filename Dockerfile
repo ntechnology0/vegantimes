@@ -2,35 +2,32 @@ FROM node:16-alpine AS dependecies
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install --save
+RUN npm install --save --legacy-peer-deps
 
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=dependecies /app/node_modules ./node_modules
 COPY . .
+RUN npx prisma generate
 RUN npm run build
 
 FROM node:16-alpine AS runner
-ARG POSTMARK_SMTP_SERVER
-ARG POSTMARK_SMTP_PORT
-ARG POSTMARK_SMTP_ENCRYPTION
-ARG POSTMARK_SMTP_FROM
-ARG SUPABASE_URL
+ARG DATABASE_URL
+ARG SWELL_STORE_ID
+ARG SWELL_PUBLIC_KEY
 
 WORKDIR /app
 ENV NODE_ENV=production
-ENV POSTMARK_SMTP_SERVER=${POSTMARK_SMTP_SERVER}
-ENV POSTMARK_SMTP_PORT=${POSTMARK_SMTP_PORT}
-ENV POSTMARK_SMTP_ENCRYPTION=${POSTMARK_SMTP_ENCRYPTION}
-ENV POSTMARK_SMTP_FROM=${POSTMARK_SMTP_FROM}
-ENV SUPABASE_URL=${SUPABASE_URL}
+ENV DATABASE_URL=${DATABASE_URL}
+ENV SWELL_PUBLIC_KEY=${SWELL_PUBLIC_KEY}
+ENV SWELL_STORE_ID=${SWELL_STORE_ID}
 
-RUN addgroup --system --gid 1001 vegangroup
-RUN adduser --system --uid 1001 veganuser
-COPY --from=builder --chown=veganuser:vegangroup /app/public ./public
-COPY --from=builder --chown=veganuser:vegangroup /app/package.json ./package.json
-COPY --from=builder --chown=veganuser:vegangroup /app ./
-USER veganuser
+RUN addgroup --system --gid 1001 vegantimesgroup
+RUN adduser --system --uid 1001 vegantimesuser
+COPY --from=builder --chown=vegantimesuser:vegantimesgroup /app/public ./public
+COPY --from=builder --chown=vegantimesuser:vegantimesgroup /app/package.json ./package.json
+COPY --from=builder --chown=vegantimesuser:vegantimesgroup /app ./
+USER vegantimesuser
 EXPOSE 3000
 
 CMD ["npm", "run", "start"]
