@@ -4,9 +4,14 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./app/core/**/*.{js,ts,jsx,tsx}",
     "./app/auth/**/*.{js,ts,jsx,tsx}",
+    "./app/home/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#54B435",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }

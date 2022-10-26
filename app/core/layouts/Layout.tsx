@@ -1,6 +1,7 @@
 import Head from "next/head"
 import React, { FC } from "react"
 import { BlitzLayout } from "@blitzjs/next"
+import Script from "next/script"
 
 const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
   title,
@@ -35,8 +36,8 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
-
       {children}
+      <Script src="gradient.js" strategy="afterInteractive" />
     </main>
   )
 }

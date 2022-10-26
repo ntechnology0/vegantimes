@@ -4,7 +4,7 @@ import forgotPassword from "./forgotPassword"
 import previewEmail from "preview-email"
 import { Ctx } from "@blitzjs/next"
 
-beforeEach(async () => {
+beforeAll(async () => {
   await db.$reset()
 })
 

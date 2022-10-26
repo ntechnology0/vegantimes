@@ -34,12 +34,16 @@ const GuidesStyle = styled.div<GuidesSize>`
   }
 `
 
-const Guides: React.FC = () => {
+type Props = {
+  useSize?: boolean
+}
+
+const Guides: React.FC<Props> = ({ useSize }) => {
   const { height } = useWindowSize()
 
   return (
     <GuidesStyle
-      height={height}
+      height={useSize ? height : undefined}
       className="absolute w-screen left-0 right-0 z-20 h-full top-0 bg-transparent"
     >
       <div className="guide"></div>
