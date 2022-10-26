@@ -1,3 +1,4 @@
+// @ts-ignore
 import swell from "swell-js"
 
 const SWELL_STORE_ID = process.env.SWELL_STORE_ID
