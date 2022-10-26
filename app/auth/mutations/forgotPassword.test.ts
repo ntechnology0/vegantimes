@@ -1,10 +1,10 @@
 import db from "db"
-import { hash256 } from "@blitzjs/auth"
+import { hash256, SecurePassword } from "@blitzjs/auth"
 import forgotPassword from "./forgotPassword"
 import previewEmail from "preview-email"
 import { Ctx } from "@blitzjs/next"
 
-beforeEach(async () => {
+beforeAll(async () => {
   await db.$reset()
 })
 
@@ -25,6 +25,7 @@ describe("forgotPassword mutation", () => {
     const user = await db.user.create({
       data: {
         email: "user@example.com",
+        hashedPassword: await SecurePassword.hash("password2022"),
         tokens: {
           // Create old token to ensure it's deleted
           create: {

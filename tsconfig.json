@@ -17,7 +17,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "paths": {
+      "@styles/*": ["./app/core/styles/*"],
+      "@hooks/*": ["./app/core/hooks/*"],
+      "@app/*": ["./app/*"],
+      "@db/*": ["./db/*"],
+      "@components/*": ["./app/core/components/*"],
+      "@server/*": ["./server/*"],
+      "@public/*": ["./public/*"]
+    }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types"]
