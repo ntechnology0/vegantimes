@@ -27,9 +27,15 @@
     "@blitzjs/auth": "2.0.0-beta.12",
     "@blitzjs/next": "2.0.0-beta.12",
     "@blitzjs/rpc": "2.0.0-beta.12",
+    "@editorjs/editorjs": "2.25.0",
+    "@editorjs/list": "1.7.0",
+    "@editorjs/paragraph": "2.8.0",
+    "@editorjs/quote": "2.4.0",
+    "@editorjs/table": "2.0.4",
     "@prisma/client": "4.0.0",
     "@tailwindcss/forms": "0.5.3",
     "blitz": "2.0.0-beta.12",
+    "clsx": "1.2.1",
     "formik": "2.2.9",
     "framer-motion": "7.5.3",
     "mailing": "0.8.3",
@@ -52,6 +58,7 @@
     "zod-formik-adapter": "1.1.1"
   },
   "devDependencies": {
+    "@editorjs/link": "2.4.2",
     "@next/bundle-analyzer": "12.0.8",
     "@testing-library/jest-dom": "5.16.3",
     "@testing-library/react": "13.4.0",

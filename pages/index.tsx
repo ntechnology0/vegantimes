@@ -26,4 +26,6 @@ const Home: BlitzPage = () => {
   )
 }
 
+Home.redirectAuthenticatedTo = "/dashboard"
+
 export default Home

@@ -65,7 +65,7 @@ export const LoginForm = (props: LoginFormProps) => {
                 <div className="w-full lg:max-w-[420px] mx-auto flex flex-col justify-center items-center">
                   <div className="bg-white w-full space-y-3 form-box shadow-lg border border-slate-500 rounded flex flex-col justify-start items-start">
                     <h1 className="font-medium fonts__poppins_regular text-sm font-sans">
-                      Connectez-vous
+                      Start a new session
                     </h1>
                     <div className="rounded-md border w-full border-gray-300 px-3 py-2 shadow-sm focus-within:border-[#54B435] focus-within:ring-1 focus-within:ring-[#54B435]">
                       <label
@@ -89,7 +89,7 @@ export const LoginForm = (props: LoginFormProps) => {
                         htmlFor="password"
                         className="block text-xs fonts__inter_regular font-medium text-gray-900"
                       >
-                        Mot de passe
+                        Password
                       </label>
                       <Field
                         type={"password"}
@@ -98,7 +98,7 @@ export const LoginForm = (props: LoginFormProps) => {
                         name="password"
                         id="password"
                         className="block w-full border-0 text-sm focus:outline-none p-0 fonts__inter_regular text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
-                        placeholder="Min. 12 caractères"
+                        placeholder="Min. 12 characters"
                       />
                     </div>
                     <Button
@@ -106,7 +106,7 @@ export const LoginForm = (props: LoginFormProps) => {
                       disabled={isSubmitting}
                       className="w-full fonts__inter_regular flex text-sm font-medium flex-row justify-center items-center"
                     >
-                      <span>Continuer</span>
+                      <span>Continue</span>
                     </Button>
                     <p
                       className="mt-2 text-xs font__inter_regular text-gray-500"
