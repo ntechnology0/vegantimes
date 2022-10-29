@@ -31,7 +31,6 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
   const inialize = async () => {
     const WYSIWYGEditorJS = (await import("@editorjs/editorjs")).default
     const _header = (await import("@editorjs/header")).default
-    const _table = (await import("@editorjs/table")).default
     const _list = (await import("@editorjs/list")).default
     const _linkTool = (await import("@editorjs/link")).default
     const _breakLine = (await import("editorjs-break-line")).default
@@ -50,7 +49,6 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
         data: body.content,
         tools: {
           header: _header,
-          table: _table,
           list: _list,
           linkTool: _linkTool,
           breakLine: _breakLine,
@@ -78,17 +76,18 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
   return (
     <WYSIWYGEditorStyled className="flex flex-col justify-start items-center w-full">
       <WYSIWYGEditorHeader />
+      <TextAreaSize
+        autoFocus
+        name="title"
+        id="title"
+        defaultValue={recipe ? recipe.title : ""}
+        placeholder="Recipe title"
+        maxRows={1}
+        maxLength={120}
+        className="w-full resize-none px-3 lg:px-5 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
+      />
       <div className="w-full flex flex-col lg:flex-row container mx-auto">
-        <div className="prose lg:w-1/2 prose-stone  prose-base editor__block">
-          <TextAreaSize
-            autoFocus
-            name="title"
-            id="title"
-            defaultValue={recipe ? recipe.title : ""}
-            placeholder="Recipe title"
-            maxRows={3}
-            className="w-full resize-none px-3 lg:px-0 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
-          />
+        <div className="prose lg:w-1/2 prose-sm editor__block">
           <div id="editor" className="h-full px-3 lg:px-0" />
         </div>
       </div>
