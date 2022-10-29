@@ -28,7 +28,7 @@ function RootErrorFallback({ error }: ErrorFallbackProps) {
 function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   return (
-    <PlausibleProvider domain="parawell.ma">
+    <PlausibleProvider domain="vegantimes.app">
       <ErrorBoundary FallbackComponent={RootErrorFallback}>
         {getLayout(<Component {...pageProps} />)}
       </ErrorBoundary>
