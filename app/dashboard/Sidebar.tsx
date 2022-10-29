@@ -10,7 +10,7 @@ const SidebarStyled = styled.nav``
 
 const Sidebar: React.FC = () => {
   return (
-    <SidebarStyled className="w-full lg:w-[220px] bg-white py-2 lg:space-y-1 space-y-0 lg:border-r border-b border-slate-100 lg:h-screen h-[50px] flex flex-row px-2 lg:px-4 lg:flex-col justify-start lg:justify-between items-end lg:items-start overflow-x-scroll  lg:overflow-x-hidden">
+    <SidebarStyled className="w-full fixed lg:relative lg:w-[220px] bg-white py-2 lg:space-y-1 space-y-0 lg:border-r border-b border-slate-100 lg:h-screen h-[50px] flex flex-row px-2 lg:px-4 lg:flex-col justify-between lg:justify-between items-end lg:items-start overflow-x-scroll lg:overflow-x-hidden">
       <div className="w-full flex flex-row lg:flex-col">
         <SidebarLink
           text="Inbox"
