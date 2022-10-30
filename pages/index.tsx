@@ -7,6 +7,7 @@ import GradientAnimation from "@app/home/GradientAnimation"
 const HomeStyled = styled.div``
 const Header = dynamic(() => import("@app/home/Header"))
 const Banner = dynamic(() => import("@app/home/Banner"))
+const Introduction = dynamic(() => import("@app/home/Introduction"))
 const Guides = dynamic(() => import("@app/core/layouts/Guides"), {
   ssr: false,
 })
@@ -20,12 +21,11 @@ const Home: BlitzPage = () => {
           <Header />
           <Banner />
           <GradientAnimation />
+          <Introduction />
         </div>
       </Layout>
     </HomeStyled>
   )
 }
-
-Home.redirectAuthenticatedTo = "/dashboard"
 
 export default Home
