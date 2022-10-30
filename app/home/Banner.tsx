@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
     <BannerStyled className="flex min-h-[78vh] flex-col lg:flex-row px-1 lg:px-0 lg:justify-center py-6 items-center w-full">
       <div className="w-full lg:w-1/2 space-y-3.5 flex flex-col justify-center h-full items-start">
         <h1 className="fonts__poppins_regular font-semibold text-6xl">The vegan diet made easy</h1>
-        <p className="text-md fonts__inter_regular font-medium text-slate-400">
+        <p className="text-md fonts__inter_regular font-medium text-slate-600">
           Every day, we'll notify you a new recipe and grocery list that's perfect for your
           lifestyle. You can skip or reschedule the recipes you don't want, and we'll remind you
           when it's time to shop.
@@ -42,20 +42,7 @@ const Banner: React.FC = () => {
           <RiEdgeFill size={20} className="text-slate-400" />
         </div>
       </div>
-      <div className="w-full lg:w-1/2 hidden lg:flex flex-col justify-center h-full items-center">
-        <div className="-mr-20 md:w-[calc(50%+5rem)]">
-          <div className="relative w-full">
-            <div className="">
-              <Image
-                url="https://imagedelivery.net/RftBCAD9WIDjY7t0O7Pe4A/fc99ff75-dc0e-42bf-4f33-f2364a4d2100/public"
-                width={238}
-                height={423}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="w-full lg:w-1/2 hidden lg:flex flex-col justify-center h-full items-center"></div>
     </BannerStyled>
   )
 }
