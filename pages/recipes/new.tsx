@@ -1,10 +1,10 @@
-import Layout from "app/core/layouts/Layout"
 import styled from "styled-components"
 import dynamic from "next/dynamic"
 import { BlitzPage } from "@blitzjs/next"
 import React from "react"
 
-const MarkdownEditor = dynamic(() => import("@app/core/components/WYSIWYGEditor"))
+const Layout = dynamic(() => import("@app/core/layouts/Layout"))
+const Editor = dynamic(() => import("@app/core/components/WYSIWYGEditor"))
 
 const RecipesNewStyled = styled.div`
   .content {
@@ -27,7 +27,7 @@ const RecipesNew: BlitzPage = () => {
       <Layout>
         <section className="w-screen min-h-screen flex lg:flex-row flex-col justify-start items-start">
           <div className="flex flex-col justify-start items-start w-full">
-            <MarkdownEditor />
+            <Editor />
           </div>
         </section>
       </Layout>

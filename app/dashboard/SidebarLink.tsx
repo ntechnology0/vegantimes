@@ -19,7 +19,7 @@ const SidebarLink: React.FC<Props> = ({ link, text, Icon, className }) => {
       <button
         type="button"
         className={clsx(
-          `focus:outline-none flex flex-row justify-center lg:justify-start space-x-2 items-center px-5 py-2 hover:text-slate-800  hover:bg-slate-50 rounded-md cursor-pointer w-full lg:w-full`,
+          `focus:outline-none flex flex-row justify-center lg:justify-start space-x-2 items-center px-5 py-2 hover:text-slate-800  hover:bg-slate-50 bg-opacity-50 rounded-md cursor-pointer w-full lg:w-full`,
           routerPathName === link ? "text-primary" : "text-slate-600",
           className && `${className}`
         )}

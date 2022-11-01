@@ -1,9 +1,9 @@
-import Layout from "app/core/layouts/Layout"
 import styled from "styled-components"
 import dynamic from "next/dynamic"
 import { BlitzPage } from "@blitzjs/next"
 import React from "react"
 
+const Layout = dynamic(() => import("@app/core/layouts/Layout"))
 const Header = dynamic(() => import("@app/dashboard/Header"))
 const Sidebar = dynamic(() => import("@app/dashboard/Sidebar"))
 

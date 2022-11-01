@@ -44,7 +44,7 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
         onReady: () => {
           editorReference.current = editor
         },
-        placeholder: "Type here to write your post",
+        placeholder: "Type here to write your recipe",
         inlineToolbar: true,
         data: body.content,
         tools: {
@@ -81,15 +81,16 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
         name="title"
         id="title"
         defaultValue={recipe ? recipe.title : ""}
-        placeholder="Recipe title"
+        placeholder="Your recipe title"
         maxRows={1}
         maxLength={120}
-        className="w-full resize-none px-3 lg:px-5 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
+        className="w-full border-b border-t border-slate-50 focus:border-slate-50 resize-none px-3 lg:px-16 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
       />
-      <div className="w-full flex flex-col lg:flex-row container mx-auto">
-        <div className="prose lg:w-1/2 prose-sm editor__block">
+      <div className="w-full flex flex-col justify-center items-center lg:flex-row container mx-auto">
+        <div className="prose lg:w-1/2 w-full prose-sm fonts__inter_regular font-medium editor__block">
           <div id="editor" className="h-full px-3 lg:px-0" />
         </div>
+        <div className="w-full lg:w-1/2 flex flex-col justify-start items-start"></div>
       </div>
     </WYSIWYGEditorStyled>
   )
