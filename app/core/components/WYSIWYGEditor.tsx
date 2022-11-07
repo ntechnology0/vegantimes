@@ -34,7 +34,7 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
     const _list = (await import("@editorjs/list")).default
     const _linkTool = (await import("@editorjs/link")).default
     const _breakLine = (await import("editorjs-break-line")).default
-
+    const _quote = (await import("@editorjs/quote")).default
     const body = recipe ? recipeSchema.parse(recipe) : { title: "", content: undefined }
 
     if (!editorReference.current) {
@@ -52,6 +52,7 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
           list: _list,
           linkTool: _linkTool,
           breakLine: _breakLine,
+          quote: _quote,
         },
       })
     }
@@ -74,23 +75,24 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
 
   if (mounted === false) return null
   return (
-    <WYSIWYGEditorStyled className="flex flex-col justify-start items-center w-full">
+    <WYSIWYGEditorStyled className="flex flex-row justify-start items-start h-screen w-full">
       <WYSIWYGEditorHeader />
-      <TextAreaSize
-        autoFocus
-        name="title"
-        id="title"
-        defaultValue={recipe ? recipe.title : ""}
-        placeholder="Your recipe title"
-        maxRows={1}
-        maxLength={120}
-        className="w-full border-b border-t border-slate-50 focus:border-slate-50 resize-none px-3 lg:px-16 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
-      />
-      <div className="w-full flex flex-col justify-center items-center lg:flex-row container mx-auto">
-        <div className="prose lg:w-1/2 w-full prose-sm fonts__inter_regular font-medium editor__block">
-          <div id="editor" className="h-full px-3 lg:px-0" />
+      <div className="w-full">
+        <TextAreaSize
+          autoFocus
+          name="title"
+          id="title"
+          defaultValue={recipe ? recipe.title : ""}
+          placeholder="Your recipe title"
+          maxRows={2}
+          maxLength={120}
+          className="w-full resize-none px-3 lg:px-5 appearance-none border-0 fonts__poppins_regular overflow-hidden text-xl font-semibold focus:ring-0 focus:outline-none"
+        />
+        <div className="w-full flex flex-col justify-start px-5 items-start lg:flex-row">
+          <div className="prose w-full prose-sm fonts__inter_regular font-medium editor__block">
+            <div id="editor" className="h-full px-3 lg:px-0 w-full" />
+          </div>
         </div>
-        <div className="w-full lg:w-1/2 flex flex-col justify-start items-start"></div>
       </div>
     </WYSIWYGEditorStyled>
   )
