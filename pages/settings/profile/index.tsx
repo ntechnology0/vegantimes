@@ -21,7 +21,9 @@ const ProfileSettings: BlitzPage = () => {
             <div className="w-full flex flex-row justify-start lg:max-w-[1080px] items-start h-screen">
               <Sidebar />
               <div className="w-full lg:w-3/4 flex flex-col justify-start items-start space-y-1 px-4 py-4">
-                <UserInformation />
+                <React.Suspense>
+                  <UserInformation />
+                </React.Suspense>
               </div>
               <div className="w-full lg:w-1/4">
                 <React.Suspense>

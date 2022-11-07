@@ -9,7 +9,7 @@ const ProfilePictureStyled = styled.div``
 const ProfilePicture: React.FC = () => {
   const user = useCurrentUser()
   return (
-    <ProfilePictureStyled className="w-full flex flex-col py-7 justify-start items-start">
+    <ProfilePictureStyled className="w-full flex flex-col py-8 justify-start items-start">
       <h1 className="text-sm font-medium fonts__poppins_regular text-slate-600">Profile picture</h1>
       <div className="w-full flex flex-row justify-center items-center py-4">
         {user?.profile && user?.profile[0]?.picture ? null : (
