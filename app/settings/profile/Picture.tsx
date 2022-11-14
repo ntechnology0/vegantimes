@@ -12,7 +12,7 @@ const ProfilePicture: React.FC = () => {
     <ProfilePictureStyled className="w-full flex flex-col py-8 justify-start items-start">
       <h1 className="text-sm font-medium fonts__poppins_regular text-slate-600">Profile picture</h1>
       <div className="w-full flex flex-row justify-center items-center py-4">
-        {user?.profile && user?.profile[0]?.picture ? null : (
+        {user?.profile && user?.profile ? null : (
           <div className="w-[100px] rounded-full h-[100px] flex border border-slate-200 flex-col justify-center items-center bg-primary bg-opacity-10">
             <span className="font-medium fonts__poppins_regular text-md">V</span>
           </div>
