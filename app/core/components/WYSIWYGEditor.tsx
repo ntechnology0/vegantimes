@@ -35,6 +35,7 @@ const WYSIWYGEditor: React.FC<Props> = ({ recipe }) => {
     const _linkTool = (await import("@editorjs/link")).default
     const _breakLine = (await import("editorjs-break-line")).default
     const _quote = (await import("@editorjs/quote")).default
+    const _attaches = (await import("@editorjs/attaches")).default
     const body = recipe ? recipeSchema.parse(recipe) : { title: "", content: undefined }
 
     if (!editorReference.current) {
