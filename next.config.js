@@ -9,11 +9,14 @@ const config = {
     styledComponents: true,
   },
   images: {
-    domains: ["imagedelivery.net"],
+    domains: ["imagedelivery.net", "faces-img.xcdn.link"],
   },
   env: {
-    SWELL_STORE_ID: process.env.SWELL_STORE_ID,
-    SWELL_PUBLIC_KEY: process.env.SWELL_PUBLIC_KEY,
+    S3_ACCESS_KEY: process.env.S3_ACCESS_KEY || "",
+    S3_SECRET_KEY: process.env.S3_SECRET_KEY || "",
+    S3_ENDPOINT: process.env.S3_ENDPOINT || "",
+    S3_REGION: process.env.S3_REGION || "",
+    S3_BUCKET: process.env.S3_BUCKET || "",
   },
 }
 

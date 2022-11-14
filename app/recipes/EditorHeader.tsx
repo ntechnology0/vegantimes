@@ -11,7 +11,7 @@ const EditorHeaderStyled = styled.div``
 
 const EditorHeader: React.FC = () => {
   return (
-    <EditorHeaderStyled className="w-full relative py-2 px-2 bg-white text-black container mx-auto flex flex-row justify-between space-x-5 items-center">
+    <EditorHeaderStyled className="w-[250px] relative py-2 px-2 bg-slate-50 border-r border-slate-100 h-screen text-black flex flex-col justify-between space-x-5 items-center">
       <Link href="/recipes">
         <button
           className="flex flex-row justify-start items-center space-x-1 bg-transparent focus:outline-none appearance-none"

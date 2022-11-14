@@ -5,12 +5,23 @@ import clsx from "clsx"
 type Props = {
   url: string
   alt: string
-  width: number
-  height: number
+  width?: number
+  height?: number
   fetching?: boolean
   className?: string
+  unoptimized?: boolean
+  priority?: boolean
 }
-const LoaderImage: React.FC<Props> = ({ url, alt, width, height, className, fetching = false }) => {
+const LoaderImage: React.FC<Props> = ({
+  url,
+  alt,
+  width,
+  height,
+  className,
+  fetching = false,
+  unoptimized,
+  priority,
+}) => {
   const [loading, setLoading] = React.useState(true)
 
   //aspect-w-1 aspect-h-1 w-full flex-1
@@ -24,6 +35,8 @@ const LoaderImage: React.FC<Props> = ({ url, alt, width, height, className, fetc
           src={url}
           width={width}
           height={height}
+          unoptimized={unoptimized}
+          priority={priority}
           objectFit="cover"
           className={clsx(
             "duration-700 ease-in-out group-hover:opacity-75",

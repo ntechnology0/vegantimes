@@ -16,7 +16,7 @@ const HeaderStyle = styled.div`
 
 const Header: React.FC = () => {
   return (
-    <HeaderStyle className="flex flex-row px-1 lg:px-0 justify-between py-2 items-center w-full">
+    <HeaderStyle className="flex relative z-[100] flex-row px-1 lg:px-0 justify-between py-2 items-center w-full">
       <Link href={"/"}>
         <PrimaryLogo
           viewBox="0 0 1000 500"
