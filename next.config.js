@@ -9,7 +9,7 @@ const config = {
     styledComponents: true,
   },
   images: {
-    domains: ["imagedelivery.net"],
+    domains: ["imagedelivery.net", "faces-img.xcdn.link"],
   },
   env: {
     S3_ACCESS_KEY: process.env.S3_ACCESS_KEY || "",
