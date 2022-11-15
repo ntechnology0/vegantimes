@@ -7,11 +7,12 @@ import { RiChromeFill, RiEdgeFill, RiFirefoxFill, RiOperaFill } from "react-icon
 const Button = dynamic(() => import("@app/core/components/Button"))
 const Illustration = dynamic(() => import("@app/home/Illustration"))
 const Phone = dynamic(() => import("@app/home/Phone"))
+const Image = dynamic(() => import("@app/core/components/Image"))
 const Application = dynamic(() => import("@app/home/Application"))
 const Link = dynamic(() => import("next/link"))
 
 const BannerStyled = styled.div``
-//https://imagedelivery.net/RftBCAD9WIDjY7t0O7Pe4A/8480604b-084d-4d7e-a8ef-b0a622940300/public
+
 const Banner: React.FC = () => {
   return (
     <BannerStyled className="flex min-h-[78vh] flex-col lg:flex-row px-1 lg:px-0 lg:justify-center py-6 items-center w-full">
@@ -42,6 +43,16 @@ const Banner: React.FC = () => {
           <RiChromeFill size={20} className="text-slate-400" />
           <RiOperaFill size={20} className="text-slate-400" />
           <RiEdgeFill size={20} className="text-slate-400" />
+        </div>
+        <div className="w-full flex flex-row justify-start items-center">
+          <Link href={"https://www.scaleway.com/en"}>
+            <Image
+              url="https://imagedelivery.net/RftBCAD9WIDjY7t0O7Pe4A/8480604b-084d-4d7e-a8ef-b0a622940300/public"
+              width={120}
+              height={50}
+              alt="Scaleway partner"
+            />
+          </Link>
         </div>
       </div>
       <div className="w-full lg:w-1/2 hidden lg:flex flex-col justify-center h-full items-center">
