@@ -6,8 +6,7 @@ import GradientAnimation from "@app/home/GradientAnimation"
 
 const PricingStyled = styled.div``
 const Header = dynamic(() => import("@app/home/Header"))
-const Banner = dynamic(() => import("@app/home/Banner"))
-const Introduction = dynamic(() => import("@app/home/Introduction"))
+const Banner = dynamic(() => import("@app/pricing/Banner"))
 const Footer = dynamic(() => import("@app/home/Footer"))
 const Guides = dynamic(() => import("@app/core/layouts/Guides"), {
   ssr: false,
@@ -20,6 +19,7 @@ const Pricing: BlitzPage = () => {
       <Layout>
         <div className="w-full px-5 lg:px-0 lg:max-w-[1080px] mx-auto h-full flex flex-col justify-start items-center">
           <Header />
+          <Banner />
           <Footer />
         </div>
       </Layout>
